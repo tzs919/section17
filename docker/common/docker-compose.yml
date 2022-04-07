@@ -1,11 +1,11 @@
 version: '2'
 services:
   eurekaserver:
-   image:   johncarnell/tmx-eurekasvr:chapter9
-   ports:
+   image:   johncarnell/tmx-eurekasvr:section17
+   ports:`
        - "8761:8761"
   configserver:
-    image: johncarnell/tmx-confsvr:chapter9
+    image: johncarnell/tmx-confsvr:section17
     ports:
        - "8888:8888"
     environment:
@@ -13,13 +13,13 @@ services:
        EUREKASERVER_PORT: "8761"
        ENCRYPT_KEY:       "IMSYMMETRIC"
   zipkin:
-    image: johncarnell/tmx-zipkinsvr:chapter9
+    image: johncarnell/tmx-zipkinsvr:section17
     ports:
       - "9411:9411"
     environment:
       SERVER_PORT: "9411"
   zuulserver:
-    image: johncarnell/tmx-zuulsvr:chapter9
+    image: johncarnell/tmx-zuulsvr:section17
     ports:
       - "5555:5555"
     environment:
@@ -41,7 +41,7 @@ services:
       - POSTGRES_PASSWORD=p0stgr@s
       - POSTGRES_DB=eagle_eye_local
   licensingservice:
-    image: johncarnell/tmx-licensing-service:chapter9
+    image: johncarnell/tmx-licensing-service:section17
     ports:
       - "8080:8080"
     environment:
@@ -61,7 +61,7 @@ services:
       ZIPKIN_PORT:         "9411"
       ENCRYPT_KEY:       "IMSYMMETRIC"
   organizationservice:
-    image: johncarnell/tmx-organization-service:chapter9
+    image: johncarnell/tmx-organization-service:section17
     ports:
       - "8085:8085"
     environment:
