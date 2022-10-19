@@ -33,7 +33,7 @@ services:
       CONFIGSERVER_PORT:   "8888"
       ZIPKIN_PORT:         "9411"
   database:
-    image: postgres:9.5
+    image: postgres:latest
     ports:
       - "5432:5432"
     environment:
@@ -80,7 +80,7 @@ services:
       ZIPKIN_PORT:         "9411"
       ENCRYPT_KEY:       "IMSYMMETRIC"
   redis:
-    image: redis:alpine
+    image: redis:latest
     ports:
       - 6379:6379
   kafkaserver:
